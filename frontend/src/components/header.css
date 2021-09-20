@@ -1,0 +1,14 @@
+.header-logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+.header {
+  background-color: #f9fafb;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: calc(10px + 2vmin);
+  color: #282c34;
+}

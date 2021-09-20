@@ -11,19 +11,6 @@ class RGB():
 
     color_space = "rgb"
 
-    def __init__(self, red, green, blue):
-        self.red = self._validate_rgb_value(red)
-        self.green = self._validate_rgb_value(green)
-        self.blue = self._validate_rgb_value(blue)
-
-    def _validate_rgb_value(self, value):
-        """
-        Validates that each RGB values is within range.
-        """
-        if int(value) < 0 and int(value) > 255:
-            raise ValueError("RGB values must be between 0 and 255")
-        return value
-
     @staticmethod
     def generate():
         return {
@@ -40,30 +27,6 @@ class HSL():
     colors are modeled from their hue, saturation, lightness.
     """
     color_space = "hsl"
-
-    def __init__(self, hue, saturation, lightness):
-        self.hue = hue
-        self.saturation = saturation
-        self.lightness = lightness
-
-    def _validate_hue(self, hue):
-        """
-        Validates the hue of the HSL color space.
-        """
-
-        if int(hue) < 0 and int(hue) > 360:
-            raise ValueError("The hue must be between 0 and 360")
-        return hue
-
-    def _validate_saturation_lightness(self, value):
-        """
-        Validates the saturation and lightness of the HSL color space.
-        """
-        if int(value) < 0 and int(value) > 360:
-            raise ValueError(
-                "Saturation and Lightness must be values between 0 and 360"
-            )
-        return(value)
 
     @staticmethod
     def generate():

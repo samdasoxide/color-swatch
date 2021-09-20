@@ -38,11 +38,26 @@ class HSL():
         }
 
 
+class BRGB():
+    """
+    BRGB stores the red, green, and blue components as values
+    between 0 and 10000
+    """
+    color_space = "brgb"
+
+    @staticmethod
+    def generate():
+        return {
+            "type": BRGB.color_space,
+            "value": randint(0, 10000)
+        }
+
+
 class JsonView(View):
 
     def get(self, request):
 
-        color_spaces = [RGB, HSL]
+        color_spaces = [RGB, HSL, BRGB]
         response = []
 
         for _ in range(5):

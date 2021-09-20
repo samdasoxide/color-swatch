@@ -9,6 +9,7 @@ export default function ColorItem(props) {
       const formatters = {
         hsl: hslFormatter(colorAttributes),
         rgb: rgbFormatter(colorAttributes),
+        brgb: brgbFormatter(colorAttributes),
       }
 
       setColor(formatters[colorAttributes.type])
@@ -22,6 +23,10 @@ export default function ColorItem(props) {
 
   const hslFormatter = (color) => {
     return `hsl(${color.hue}, ${color.saturation}%, ${color.lightness}%)`
+  }
+
+  const brgbFormatter = (color) => {
+    return `brgb(${color.value})`
   }
 
   return(
